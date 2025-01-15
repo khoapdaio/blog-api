@@ -4,6 +4,7 @@ import com.khoapd.ecommerce.order.PaymentMethod;
 import com.khoapd.ecommerce.orderline.model.OrderLine;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.OptimisticLock;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -37,6 +38,7 @@ public class Order {
     private String customerId;
 
     @OneToMany(mappedBy = "order")
+    @OptimisticLock(excluded = true)
     private List<OrderLine> orderLines;
 
     @CreatedDate

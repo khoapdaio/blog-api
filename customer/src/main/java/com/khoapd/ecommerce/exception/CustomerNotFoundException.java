@@ -1,4 +1,4 @@
-package com.khoapd.customer.exception;
+package com.khoapd.ecommerce.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

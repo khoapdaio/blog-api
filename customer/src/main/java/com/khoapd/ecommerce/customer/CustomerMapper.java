@@ -1,12 +1,12 @@
-package com.khoapd.customer.service;
+package com.khoapd.ecommerce.customer;
 
-import com.khoapd.customer.model.Customer;
-import com.khoapd.customer.model.CustomerRequest;
-import com.khoapd.customer.model.CustomerResponse;
+import com.khoapd.ecommerce.customer.model.Customer;
+import com.khoapd.ecommerce.customer.model.CustomerRequest;
+import com.khoapd.ecommerce.customer.model.CustomerResponse;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CustomerMapperService {
+public class CustomerMapper {
 
     public Customer toCustomer(CustomerRequest request) {
         if (request == null) {

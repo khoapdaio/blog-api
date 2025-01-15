@@ -1,4 +1,4 @@
-package com.khoapd.customer;
+package com.khoapd.ecommerce;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

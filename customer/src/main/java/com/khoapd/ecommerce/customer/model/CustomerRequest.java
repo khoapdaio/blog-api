@@ -1,4 +1,4 @@
-package com.khoapd.customer.model;
+package com.khoapd.ecommerce.customer.model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;

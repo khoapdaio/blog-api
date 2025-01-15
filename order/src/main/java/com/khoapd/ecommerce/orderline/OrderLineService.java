@@ -2,6 +2,7 @@ package com.khoapd.ecommerce.orderline;
 
 import com.khoapd.ecommerce.orderline.model.OrderLineRequest;
 import com.khoapd.ecommerce.orderline.model.OrderLineResponse;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ public class OrderLineService {
     private final OrderLineRepository repository;
     private final OrderLineMapper mapper;
 
+    @Transactional
     public Integer saveOrderLine(OrderLineRequest request) {
         var order = mapper.toOrderLine(request);
         return repository.save(order).getId();

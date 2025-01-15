@@ -1,10 +1,9 @@
-package com.khoapd.customer.service;
+package com.khoapd.ecommerce.customer;
 
-import com.khoapd.customer.exception.CustomerNotFoundException;
-import com.khoapd.customer.model.Customer;
-import com.khoapd.customer.model.CustomerRequest;
-import com.khoapd.customer.model.CustomerResponse;
-import com.khoapd.customer.repository.CustomerRepository;
+import com.khoapd.ecommerce.exception.CustomerNotFoundException;
+import com.khoapd.ecommerce.customer.model.Customer;
+import com.khoapd.ecommerce.customer.model.CustomerRequest;
+import com.khoapd.ecommerce.customer.model.CustomerResponse;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
@@ -17,7 +16,7 @@ import java.util.stream.Collectors;
 public class CustomerService {
 
     private final CustomerRepository repository;
-    private final CustomerMapperService mapper;
+    private final CustomerMapper mapper;
 
     public String createCustomer(CustomerRequest request) {
         var customer = this.repository.save(mapper.toCustomer(request));

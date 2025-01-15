@@ -1,7 +1,7 @@
-package com.khoapd.customer.handler;
+package com.khoapd.ecommerce.handler;
 
 
-import com.khoapd.customer.exception.CustomerNotFoundException;
+import com.khoapd.ecommerce.exception.CustomerNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
