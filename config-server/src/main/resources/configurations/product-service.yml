@@ -18,3 +18,17 @@ spring:
     baseline-version: 0
     user: ${spring.datasource.username}
     password: ${spring.datasource.password}
+
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /product/v3/api-docs
+  swagger-ui:
+    enabled: true
+
+logging:
+  level:
+    org:
+      springdoc: DEBUG
+      springframework: DEBUG

@@ -11,22 +11,56 @@ spring:
           uri: lb:http://CUSTOMER-SERVICE
           predicates:
             - Path=/api/v1/customers/**
+        - id: customer-service-doc
+          uri: lb:http://CUSTOMER-SERVICE
+          predicates:
+            - Path=/customer/v3/api-docs/**
         - id: order-service
           uri: lb:http://ORDER-SERVICE
           predicates:
-            - Path=/api/v1/orders/**
-        - id: order-lines-service
+            - Path=/api/v1/orders/**,/api/v1/order-lines/**
+        - id: order-service-doc
           uri: lb:http://ORDER-SERVICE
           predicates:
-            - Path=/api/v1/order-lines/**
+            - Path=/order/v3/api-docs/**,/order-lines/v3/api-docs/**
         - id: product-service
           uri: lb:http://PRODUCT-SERVICE
           predicates:
             - Path=/api/v1/products/**
+        - id: product-service-doc
+          uri: lb:http://PRODUCT-SERVICE
+          predicates:
+            - Path=/product/v3/api-docs/**
         - id: payment-service
           uri: lb:http://PAYMENT-SERVICE
           predicates:
             - Path=/api/v1/payments/**
+        - id: payment-service-doc
+          uri: lb:http://PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/v3/api-docs/**
+        - id: openapi
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
 
 
+springdoc:
+  enable-native-support: true
+  cache:
+    disabled: true
+  version: '@springdoc.version@'
+  api-docs:
+    enabled: true
+  swagger-ui:
+    use-root-path: true
+    enabled: true
 
+
+logging:
+  level:
+    org:
+      springdoc: DEBUG
+      springframework: DEBUG

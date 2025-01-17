@@ -22,3 +22,10 @@ spring:
 application:
   config:
     product-url: http://localhost:8222/api/v1/products
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /payment/v3/api-docs
+  swagger-ui:
+    enabled: true

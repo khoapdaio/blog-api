@@ -9,3 +9,4 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: "http://localhost:9098/realms/micro-service"
+

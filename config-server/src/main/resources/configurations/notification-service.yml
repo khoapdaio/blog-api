@@ -34,3 +34,10 @@ spring:
         connectiontimeout: 5000
         timeout: 3000
         writetimeout: 5000
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /notification/v3/api-docs
+  swagger-ui:
+    enabled: true
